@@ -5,7 +5,9 @@ export default function Menu() {
 
     return(
         <div className={"menu-container"}>
-            <FlyToButton />
+            <div className={"inner-container"}>
+                <FlyToButton />
+            </div>
         </div>
     )
 }
