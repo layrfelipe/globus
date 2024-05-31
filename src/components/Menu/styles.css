@@ -15,13 +15,31 @@
     padding: 2rem;
 }
 
+h2 {
+    color: white;
+    margin-bottom: .5rem;
+}
+
+.fly-to-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.fly-to-coords-label {
+    color: white;
+    align-self: flex-start;
+}
+
 .fly-to-coords-input {
-    width: 75%;
-    margin: .25rem;
+    width: 100%;
     font-size: 1rem;
     outline: none;
     padding: .5rem;
     cursor: default;
+    margin-bottom: 1rem;
 }
 
 #temporary-btn {
@@ -32,10 +50,34 @@
     border: 2px solid white;
     border-radius: 8px;
     transition: ease .3s;
-    width: 75%;
-    margin: 1rem;
+    width: 100%;
 }
 
 #temporary-btn:hover {
+    background: #333;
+}
+
+.manage-markers-container {
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.markers-button {
+    cursor: pointer;
+    padding: .5rem;
+    background: none;
+    color: white;
+    border: 2px solid white;
+    border-radius: 8px;
+    transition: ease .3s;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.markers-button:hover {
     background: #333;
 }

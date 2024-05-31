@@ -11,6 +11,10 @@ export default function FlyToButton({ lat, lon }: FlyToButtonProps) {
     const { globus } = useGlobusContext()
 
     const clickFlyTo = () => {
+        if (Number.isNaN(Number(lat)) || Number.isNaN(Number(lon))) {
+            alert("Preencha os campos latitude e longitude com dados válidos")
+            return
+        }
         let ell = globus?.planet.ellipsoid;
 
         let destPos = new LonLat(Number(lon), Number(lat), 5000);

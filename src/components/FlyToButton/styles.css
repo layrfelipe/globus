@@ -6,7 +6,8 @@
     border: 2px solid white;
     border-radius: 8px;
     transition: ease .3s;
-    width: 75%;
+    width: 100%;
+    margin: .5rem 0 1rem 0;
 }
 
 #fly-to-btn:hover {
