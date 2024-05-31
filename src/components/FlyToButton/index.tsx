@@ -2,14 +2,20 @@ import { useGlobusContext } from '@openglobus/openglobus-react'
 import './styles.css'
 import { LonLat } from "@openglobus/og";
 
-export default function FlyToButton() {
+interface FlyToButtonProps {
+    lat: string | undefined,
+    lon: string | undefined
+}
+
+export default function FlyToButton({ lat, lon }: FlyToButtonProps) {
     const { globus } = useGlobusContext()
 
     const clickFlyTo = () => {
         let ell = globus?.planet.ellipsoid;
 
-        let destPos = new LonLat(-43.2104872, -22.951916, 5000);
-        let viewPoi = new LonLat(-43.2104872, -22.951916, 0);
+        let destPos = new LonLat(Number(lon), Number(lat), 5000);
+        let viewPoi = new LonLat(Number(lon), Number(lat), 0);
+        
         if (ell) {
             let lookCart = ell.lonLatToCartesian(viewPoi);
             let upVec = ell.lonLatToCartesian(destPos).normalize();
@@ -18,7 +24,7 @@ export default function FlyToButton() {
         }
     }
 
-    return <div className={'button-container'}>
-        <button onClick={clickFlyTo}>Voar para o Cristo Redentor</button>
-    </div>
+    return (
+        <button id={"fly-to-btn"} onClick={clickFlyTo}>Voar para destino</button>
+    )
 }

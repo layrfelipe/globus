@@ -1,0 +1,14 @@
+#fly-to-btn {
+    cursor: pointer;
+    padding: .5rem;
+    background: none;
+    color: white;
+    border: 2px solid white;
+    border-radius: 8px;
+    transition: ease .3s;
+    width: 75%;
+}
+
+#fly-to-btn:hover {
+    background: #333;
+}
